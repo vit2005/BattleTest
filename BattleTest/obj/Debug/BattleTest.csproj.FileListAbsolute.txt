@@ -1,0 +1,13 @@
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\bin\Debug\BattleTest.exe.config
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\bin\Debug\BattleTest.exe
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\bin\Debug\BattleTest.pdb
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\BattleTest.csprojResolveAssemblyReference.cache
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\MainWindow.baml
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\MainWindow.g.cs
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\App.g.cs
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\BattleTest_MarkupCompile.cache
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\BattleTest.g.resources
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\BattleTest.Properties.Resources.resources
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\BattleTest.csproj.GenerateResource.Cache
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\BattleTest.exe
+c:\users\vit\documents\visual studio 2013\Projects\BattleTest\BattleTest\obj\Debug\BattleTest.pdb
