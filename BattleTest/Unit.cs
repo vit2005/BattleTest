@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace BattleTest
 {
-    class Unit
+    class Unit : ICloneable
     {
-        int ATK;
-        int DEF;
-        int AGI;
+        public int ATK;
+        public int DEF;
+        public int AGI;
 
-        float hp;
-        float damage;
-        float block;
-        float crit;
-        float dodge;
+        public double hp;
+        public double damage;
+        public double block;
+        public double crit;
+        public double dodge;
+
+        public bool isAlive;
 
         public Unit(int atk, int def, int agi)
         {
@@ -24,11 +26,34 @@ namespace BattleTest
             DEF = def;
             AGI = agi;
 
-            hp = 100 + 15 * DEF;
-            damage = 15 + 2 * ATK;
-            block = 100 / DEF;
-            crit = 100 / AGI;
-            dodge = 100 / AGI;
+            hp = (int)(100 + 60 * Math.Pow(DEF, 1.2) + 100 * Math.Pow(AGI, 0.6));
+            damage = 15 + 5 * Math.Pow(ATK, 1.2) + 8 * Math.Pow(AGI, 0.7);
+
+            block = 0;
+            if ((ATK + AGI == 0) || (ATK + AGI < DEF))
+                block = (DEF > 70)? 70 : DEF;
+            else
+                block = DEF / (ATK + AGI) * 70;
+
+            dodge = 0;
+            if ((ATK + DEF == 0) || (ATK + DEF < Math.Pow(AGI, 1.2)))
+                dodge = (Math.Sqrt(AGI * 2) + 15 > 70) ? 70 : Math.Sqrt(AGI * 2) + 15;
+            else
+                dodge = (Math.Sqrt(AGI * 2) + 15) / (ATK + DEF) * 70;
+
+            crit = dodge;
+            isAlive = true;
+        }
+
+        public object Clone()
+        {
+            Unit n = new Unit(ATK,DEF,AGI);
+            n.hp = hp;
+            n.damage = damage;
+            n.block = block;
+            n.crit = crit;
+            n.dodge = dodge;
+            return n;
         }
     }
 }
