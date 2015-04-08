@@ -28,11 +28,22 @@ namespace SingleBattleTest
         static bool shff = true;
         static int max = 0;
         static string text = "";
+        List<string> skills = new List<string>() { "skill_1", "skill_2", "skill_3", "skill_4", "skill_5", "skill_6", "skill_7", "skill_8", "skill_9", "skill_10", "skill_11", "skill_12", "skil_l3", "skil_l4", "skil_l5", "skill_16" };
 
         public MainWindow()
         {
             InitializeComponent();
+            FillSkills();
         }
+
+        void FillSkills()
+        {
+            foreach(string skill in skills)
+            {
+                SkillsCombobox.Items.Add(skill);
+            }
+        }
+
 
 
         #region 123
@@ -111,6 +122,42 @@ namespace SingleBattleTest
         }
 
         #endregion
+        #region azaza
+
+        private void Remove1_Click(object sender, RoutedEventArgs e)
+        {
+            SkillsList1.Items.Remove(SkillsList1.SelectedItem);
+        }
+
+        private void Remove2_Click(object sender, RoutedEventArgs e)
+        {
+            SkillsList2.Items.Remove(SkillsList2.SelectedItem);
+        }
+
+        private void Remove3_Click(object sender, RoutedEventArgs e)
+        {
+            SkillsList3.Items.Remove(SkillsList3.SelectedItem);
+        }
+
+        private void Add1_Click(object sender, RoutedEventArgs e)
+        {
+            if ((SkillsCombobox.SelectedItem.ToString() != "") && (SkillsList1.Items.Count < 4) && (SkillsList1.Items.IndexOf(SkillsCombobox.SelectedItem) == -1))
+                SkillsList1.Items.Add(SkillsCombobox.SelectedItem.ToString());
+        }
+
+        private void Add2_Click(object sender, RoutedEventArgs e)
+        {
+            if ((SkillsCombobox.SelectedItem.ToString() != "") && (SkillsList2.Items.Count < 4) && (SkillsList2.Items.IndexOf(SkillsCombobox.SelectedItem) == -1))
+                SkillsList2.Items.Add(SkillsCombobox.SelectedItem.ToString());
+        }
+
+        private void Add3_Click(object sender, RoutedEventArgs e)
+        {
+            if ((SkillsCombobox.SelectedItem.ToString() != "") && (SkillsList3.Items.Count < 4) && (SkillsList3.Items.IndexOf(SkillsCombobox.SelectedItem) == -1))
+                SkillsList3.Items.Add(SkillsCombobox.SelectedItem.ToString());
+        }
+
+        #endregion
 
         private void GenerateUnit_Click(object sender, RoutedEventArgs e)
         {
@@ -180,7 +227,6 @@ namespace SingleBattleTest
             SUM2_Copy.Text = "0";
             SUM3_Copy.Text = "0";
             SUM4_Copy.Text = "0";
-            Log.Text = "";
             text = "";
             RefreshTeams();
         }
@@ -230,7 +276,34 @@ namespace SingleBattleTest
 
         private void Fight_Click(object sender, RoutedEventArgs e)
         {
-
+            if ((SkillsList1.Items.Count < 4) || (SkillsList2.Items.Count < 4) || (SkillsList3.Items.Count < 4))
+            {
+                MessageBox.Show("Fill skills");
+                return;
+            }
+            RefreshTeams();
+            List<List<string>> skillsSet = new List<List<string>>();
+            List<string> skills = new List<string>();
+            foreach(object s in SkillsList1.Items)
+            {
+                skills = new List<string>();
+                skills.Add(s.ToString());
+            }
+            skillsSet.Add(skills);
+            foreach(object s in SkillsList2.Items)
+            {
+                skills = new List<string>();
+                skills.Add(s.ToString());
+            }
+            skillsSet.Add(skills);
+            foreach(object s in SkillsList3.Items)
+            {
+                skills = new List<string>();
+                skills.Add(s.ToString());
+            }
+            skillsSet.Add(skills);
+            BattleWindow battle = new BattleWindow(team1, team2, skillsSet);
+            battle.Show();
         }
 
     }
