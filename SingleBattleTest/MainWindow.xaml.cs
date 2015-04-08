@@ -13,11 +13,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BattleTest;
 
-namespace BattleTest
+namespace SingleBattleTest
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -33,6 +34,7 @@ namespace BattleTest
             InitializeComponent();
         }
 
+
         #region 123
 
         private void TextChanged1(object sender, TextChangedEventArgs e)
@@ -42,7 +44,7 @@ namespace BattleTest
                 SUM1.Text = (Convert.ToInt32(ATK1.Text) + Convert.ToInt32(DEF1.Text) + Convert.ToInt32(AGI1.Text)).ToString();
             }
             catch { }
-            
+
         }
 
         private void TextChanged2(object sender, TextChangedEventArgs e)
@@ -122,23 +124,23 @@ namespace BattleTest
             SUM4_Copy.Text = SUM4.Text;
             max = Convert.ToInt32(SUM4_Copy.Text);
             int sum1, sum2, sum3, atk1, atk2, atk3, def1, def2, def3, agi1, agi2, agi3;
-            sum1 = (int)max / 3; 
-            sum2 = sum1; 
-            sum3 = max - sum1 - sum2; 
-            atk1 = r.Next(sum1); 
+            sum1 = (int)max / 3;
+            sum2 = sum1;
+            sum3 = max - sum1 - sum2;
+            atk1 = r.Next(sum1);
             Thread.Sleep(3);
-            def1 = r.Next(sum1 - atk1); 
-            agi1 = sum1 - atk1 - def1; 
+            def1 = r.Next(sum1 - atk1);
+            agi1 = sum1 - atk1 - def1;
             Thread.Sleep(3);
-            atk2 = r.Next(sum2); 
+            atk2 = r.Next(sum2);
             Thread.Sleep(3);
-            def2 = r.Next(sum2 - atk2); 
-            agi2 = sum2 - atk2 - def2; 
+            def2 = r.Next(sum2 - atk2);
+            agi2 = sum2 - atk2 - def2;
             Thread.Sleep(3);
-            atk3 = r.Next(sum3); 
+            atk3 = r.Next(sum3);
             Thread.Sleep(3);
-            def3 = r.Next(sum3 - atk3); 
-            agi3 = sum3 - atk3 - def3; 
+            def3 = r.Next(sum3 - atk3);
+            agi3 = sum3 - atk3 - def3;
 
             SUM1_Copy.Text = sum1.ToString();
             SUM2_Copy.Text = sum2.ToString();
@@ -202,19 +204,19 @@ namespace BattleTest
             Random r = new Random();
             int sum1, sum2, sum3, atk1, atk2, atk3, def1, def2, def3, agi1, agi2, agi3;
             sum1 = (int)max / 3;
-            sum2 = sum1; 
-            sum3 = max - sum1 - sum2; 
+            sum2 = sum1;
+            sum3 = max - sum1 - sum2;
             atk1 = r.Next(sum1);
             Thread.Sleep(3);
-            def1 = r.Next(sum1 - atk1); 
-            agi1 = sum1 - atk1 - def1; 
+            def1 = r.Next(sum1 - atk1);
+            agi1 = sum1 - atk1 - def1;
             Thread.Sleep(3);
-            atk2 = r.Next(sum2); 
+            atk2 = r.Next(sum2);
             Thread.Sleep(3);
             def2 = r.Next(sum2 - atk2);
-            agi2 = sum2 - atk2 - def2; 
+            agi2 = sum2 - atk2 - def2;
             Thread.Sleep(3);
-            atk3 = r.Next(sum3); 
+            atk3 = r.Next(sum3);
             Thread.Sleep(3);
             def3 = r.Next(sum3 - atk3);
             agi3 = sum3 - atk3 - def3;
@@ -222,59 +224,14 @@ namespace BattleTest
             team2.Add(new Unit(atk1, def1, agi1));
             team2.Add(new Unit(atk2, def2, agi2));
             team2.Add(new Unit(atk3, def3, agi3));
-            
+
             return team2;
         }
 
         private void Fight_Click(object sender, RoutedEventArgs e)
         {
-            count = 0;
-            if (shff)
-            {
-                GenerateEnemy();
-            }
-            RefreshTeams();
-            Log.Text = "";
-            text = "";
-            for (int i=0; i<Convert.ToInt32(BattleCount.Text); i++)
-            {
-                Thread t = new Thread(new ThreadStart(SingleBattle));
-                t.Start();
-            }
-            //Log.Text = count.ToString();
-            //Log.Text += Battle.log;
-        }
 
-        private void SingleBattle()
-        {
-            List<Unit> enemy = new List<Unit>();
-            if (shff)
-            {
-                enemy = GenerateEnemyTeam();
-            }
-            else
-            {
-                enemy = team2;
-            }
-            Battle b = new Battle(team1, enemy);
-            if (b.DoBattle())
-                count++;
-            text += b.log;
-            text += "\nCount=" + count + "/100";
-           
-            //MessageBox.Show(count.ToString());
         }
-
-        private void Shuffle_Checked(object sender, RoutedEventArgs e)
-        {
-            shff = Shuffle.IsChecked.Value;
-        }
-
-        private void c_Click(object sender, RoutedEventArgs e)
-        {
-            Log.Text = text;
-        }
-   
 
     }
 }

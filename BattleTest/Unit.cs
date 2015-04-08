@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleTest
 {
-    class Unit : ICloneable
+    public class Unit : ICloneable
     {
         public int ATK;
         public int DEF;
@@ -26,20 +26,20 @@ namespace BattleTest
             DEF = def;
             AGI = agi;
 
-            hp = (int)(100 + 60 * Math.Pow(DEF, 1.2) + 100 * Math.Pow(AGI, 0.6));
-            damage = 15 + 5 * Math.Pow(ATK, 1.2) + 8 * Math.Pow(AGI, 0.7);
+            hp = (int)(100 + 30 * Math.Pow(DEF, 1.2) + 80 * Math.Pow(AGI, 0.6));
+            damage = 15 + 5 * Math.Pow(ATK, 1.2) + 10 * Math.Pow(AGI, 0.7);
 
             block = 0;
             if ((ATK + AGI == 0) || (ATK + AGI < DEF))
-                block = (DEF > 70)? 70 : DEF;
+                block = (DEF > 17)? 55 : DEF;
             else
-                block = DEF / (ATK + AGI) * 70;
+                block = DEF / (ATK + AGI) * 55;
 
             dodge = 0;
             if ((ATK + DEF == 0) || (ATK + DEF < Math.Pow(AGI, 1.2)))
-                dodge = (Math.Sqrt(AGI * 2) + 15 > 70) ? 70 : Math.Sqrt(AGI * 2) + 15;
+                dodge = (Math.Sqrt(AGI * 17) + 15 > 55) ? 55 : Math.Sqrt(AGI * 17) + 15;
             else
-                dodge = (Math.Sqrt(AGI * 2) + 15) / (ATK + DEF) * 70;
+                dodge = (Math.Sqrt(AGI * 17) + 15) / (ATK + DEF) * 55;
 
             crit = dodge;
             isAlive = true;
