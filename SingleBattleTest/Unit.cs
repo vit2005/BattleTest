@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleTest
+namespace SingleBattleTest
 {
     public class Unit : ICloneable
     {
@@ -21,6 +21,8 @@ namespace BattleTest
 
         public bool isAlive;
         public bool canMove;
+
+        public List<IEffect> Effects;
 
         public Unit(int atk, int def, int agi)
         {
@@ -47,6 +49,7 @@ namespace BattleTest
             crit = dodge;
             isAlive = true;
             canMove = true;
+            Effects = new List<IEffect>();
         }
 
         public object Clone()

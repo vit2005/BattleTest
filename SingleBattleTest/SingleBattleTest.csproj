@@ -53,6 +53,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Effect\EPoison.cs" />
+    <Compile Include="IEffect.cs" />
+    <Compile Include="ISkill.cs" />
+    <Compile Include="Skills\Heal.cs" />
+    <Compile Include="Skills\Poison.cs" />
+    <Compile Include="Skills\Strike.cs" />
+    <Compile Include="Unit.cs" />
     <Page Include="BattleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,12 +107,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BattleTest\BattleTest.csproj">
-      <Project>{8f46976f-5a8d-4ebe-94bd-5f4e99ddec25}</Project>
-      <Name>BattleTest</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

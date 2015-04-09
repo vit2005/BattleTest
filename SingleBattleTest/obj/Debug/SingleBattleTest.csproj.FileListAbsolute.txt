@@ -11,7 +11,5 @@ C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\SingleBattleTest\o
 C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\SingleBattleTest\obj\Debug\SingleBattleTest.csproj.GenerateResource.Cache
 C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\SingleBattleTest\bin\Debug\SingleBattleTest.exe
 C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\SingleBattleTest\bin\Debug\SingleBattleTest.pdb
-C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\SingleBattleTest\bin\Debug\BattleTest.exe
-C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\SingleBattleTest\bin\Debug\BattleTest.pdb
 C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\SingleBattleTest\obj\Debug\SingleBattleTest.exe
 C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\SingleBattleTest\obj\Debug\SingleBattleTest.pdb
