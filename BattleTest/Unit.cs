@@ -19,6 +19,7 @@ namespace BattleTest
         public double dodge;
 
         public bool isAlive;
+        public bool canMove;
 
         public Unit(int atk, int def, int agi)
         {
@@ -43,6 +44,7 @@ namespace BattleTest
 
             crit = dodge;
             isAlive = true;
+            canMove = true;
         }
 
         public object Clone()

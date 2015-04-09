@@ -9,14 +9,20 @@
         <Rectangle x:Name="enemy1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="70" Margin="605,25,0,0" Stroke="Black" VerticalAlignment="Top" Width="73" MouseDown="setChosen"/>
         <Rectangle x:Name="enemy2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="70" Margin="559,64,0,0" Stroke="Black" VerticalAlignment="Top" Width="73" MouseDown="setChosen"/>
         <Rectangle x:Name="enemy3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="70" Margin="521,103,0,0" Stroke="Black" VerticalAlignment="Top" Width="73" MouseDown="setChosen"/>
-        <Button x:Name="AutoAttack" Content="A" HorizontalAlignment="Left" Margin="50,215,0,0" VerticalAlignment="Top" Width="75" Height="75" IsEnabled="False"/>
+        <Button x:Name="AutoAttack" Content="A" HorizontalAlignment="Left" Margin="50,215,0,0" VerticalAlignment="Top" Width="75" Height="75" IsEnabled="False" Click="AutoAttack_Click"/>
         <Button x:Name="UseSkill1" Content="1" HorizontalAlignment="Left" Margin="191,215,0,0" VerticalAlignment="Top" Width="75" Height="75" IsEnabled="False"/>
         <Button x:Name="UseSkill2" Content="2" HorizontalAlignment="Left" Margin="327,215,0,0" VerticalAlignment="Top" Width="75" Height="75" IsEnabled="False"/>
         <Button x:Name="UseSkill3" Content="3" HorizontalAlignment="Left" Margin="466,215,0,0" VerticalAlignment="Top" Width="75" Height="75" IsEnabled="False"/>
         <Button x:Name="UseSkill4" Content="4" HorizontalAlignment="Left" Margin="603,215,0,0" VerticalAlignment="Top" Width="75" Height="75" IsEnabled="False"/>
-        <Button Content="Skip move" HorizontalAlignment="Left" Margin="50,326,0,0" VerticalAlignment="Top" Width="265"/>
-        <Button Content="Surrender" HorizontalAlignment="Left" Margin="413,326,0,0" VerticalAlignment="Top" Width="265"/>
-        <TextBox x:Name="Log" HorizontalAlignment="Left" Height="185" Margin="206,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"/>
+        <Button x:Name="SkipButton" Content="Skip move" HorizontalAlignment="Left" Margin="50,326,0,0" VerticalAlignment="Top" Width="265" Click="SkipButton_Click"/>
+        <Button x:Name="SurrenderButton" Content="Surrender" HorizontalAlignment="Left" Margin="413,326,0,0" VerticalAlignment="Top" Width="265" Click="SurrenderButton_Click"/>
+        <TextBox x:Name="Log" HorizontalAlignment="Left" Height="185" Margin="206,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" VerticalScrollBarVisibility="Visible"/>
+        <Label x:Name="ally1HP" Content="100" HorizontalAlignment="Left" Margin="50,25,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ally2HP" Content="100" HorizontalAlignment="Left" Margin="96,64,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ally3HP" Content="100" HorizontalAlignment="Left" Margin="128,103,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="enemy1HP" Content="100" HorizontalAlignment="Left" Margin="605,25,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="enemy2HP" Content="100" HorizontalAlignment="Left" Margin="559,64,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="enemy3HP" Content="100" HorizontalAlignment="Left" Margin="521,103,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

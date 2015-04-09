@@ -274,6 +274,31 @@ namespace SingleBattleTest
             return team2;
         }
 
+        private List<List<string>> GetSkillsSet()
+        {
+            List<List<string>> skillsSet = new List<List<string>>();
+            List<string> skills = new List<string>();
+            foreach (object s in SkillsList1.Items)
+            {
+                skills = new List<string>();
+                skills.Add(s.ToString());
+            }
+            skillsSet.Add(skills);
+            foreach (object s in SkillsList2.Items)
+            {
+                skills = new List<string>();
+                skills.Add(s.ToString());
+            }
+            skillsSet.Add(skills);
+            foreach (object s in SkillsList3.Items)
+            {
+                skills = new List<string>();
+                skills.Add(s.ToString());
+            }
+            skillsSet.Add(skills);
+            return skillsSet;
+        }
+
         private void Fight_Click(object sender, RoutedEventArgs e)
         {
             if ((SkillsList1.Items.Count < 4) || (SkillsList2.Items.Count < 4) || (SkillsList3.Items.Count < 4))
@@ -281,28 +306,11 @@ namespace SingleBattleTest
                 MessageBox.Show("Fill skills");
                 return;
             }
+            if (SUM4_Copy.Text == "0")
+                GenerateEnemy();
             RefreshTeams();
-            List<List<string>> skillsSet = new List<List<string>>();
-            List<string> skills = new List<string>();
-            foreach(object s in SkillsList1.Items)
-            {
-                skills = new List<string>();
-                skills.Add(s.ToString());
-            }
-            skillsSet.Add(skills);
-            foreach(object s in SkillsList2.Items)
-            {
-                skills = new List<string>();
-                skills.Add(s.ToString());
-            }
-            skillsSet.Add(skills);
-            foreach(object s in SkillsList3.Items)
-            {
-                skills = new List<string>();
-                skills.Add(s.ToString());
-            }
-            skillsSet.Add(skills);
-            BattleWindow battle = new BattleWindow(team1, team2, skillsSet);
+
+            BattleWindow battle = new BattleWindow(team1, team2, GetSkillsSet());
             battle.Show();
         }
 
