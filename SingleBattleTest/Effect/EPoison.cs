@@ -16,9 +16,10 @@ namespace SingleBattleTest.Effect
             base.moves = 3;
         }
 
-        public override void Use(Unit u, List<Unit> team)
+        public override void Use(ref List<Unit> team, ref Unit u)
         {
             u.hp -= u.maxhp / 10;
+            
             if (u.hp <= 0)
             {
                 u.isAlive = false;

@@ -30,13 +30,22 @@ namespace SingleBattleTest
             DEF = def;
             AGI = agi;
 
+            Calc();
+
+            isAlive = true;
+            canMove = true;
+            Effects = new List<IEffect>();
+        }
+
+        public void Calc()
+        {
             hp = (int)(100 + 30 * Math.Pow(DEF, 1.2) + 80 * Math.Pow(AGI, 0.6));
             maxhp = hp;
             damage = 15 + 5 * Math.Pow(ATK, 1.2) + 10 * Math.Pow(AGI, 0.7);
 
             block = 0;
             if ((ATK + AGI == 0) || (ATK + AGI < DEF))
-                block = (DEF > 17)? 55 : DEF;
+                block = (DEF > 17) ? 55 : DEF;
             else
                 block = DEF / (ATK + AGI) * 55;
 
@@ -47,9 +56,6 @@ namespace SingleBattleTest
                 dodge = (Math.Sqrt(AGI * 17) + 15) / (ATK + DEF) * 55;
 
             crit = dodge;
-            isAlive = true;
-            canMove = true;
-            Effects = new List<IEffect>();
         }
 
         public object Clone()

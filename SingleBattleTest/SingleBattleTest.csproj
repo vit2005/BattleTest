@@ -56,9 +56,9 @@
     <Compile Include="Effect\EPoison.cs" />
     <Compile Include="IEffect.cs" />
     <Compile Include="ISkill.cs" />
-    <Compile Include="Skills\Heal.cs" />
-    <Compile Include="Skills\Poison.cs" />
-    <Compile Include="Skills\Strike.cs" />
+    <Compile Include="Skills\SHeal.cs" />
+    <Compile Include="Skills\SPoison.cs" />
+    <Compile Include="Skills\SStrike.cs" />
     <Compile Include="Unit.cs" />
     <Page Include="BattleWindow.xaml">
       <SubType>Designer</SubType>

@@ -13,6 +13,8 @@ namespace SingleBattleTest
         public string description;
         public byte moves;
 
-        public abstract void Use(Unit u, List<Unit> team);
+        public abstract void Use(ref List<Unit> team, ref Unit u);
+
+        public abstract void End(ref List<Unit> team, ref Unit u);
     }
 }
