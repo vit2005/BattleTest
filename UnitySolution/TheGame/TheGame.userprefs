@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResizeScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Main.cs" Line="22" Column="2" />
+      <File FileName="Assets\Scripts\CenterlizeScript.cs" Line="8" Column="72" />
+      <File FileName="Assets\Scripts\ResizeScript.cs" Line="18" Column="53" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
