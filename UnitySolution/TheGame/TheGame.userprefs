@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ResizeScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\View\Main.cs">
     <Files>
-      <File FileName="Assets\Scripts\Main.cs" Line="22" Column="2" />
-      <File FileName="Assets\Scripts\CenterlizeScript.cs" Line="8" Column="72" />
-      <File FileName="Assets\Scripts\ResizeScript.cs" Line="18" Column="53" />
+      <File FileName="Assets\Scripts\View\CharacterMenu.cs" Line="149" Column="1" />
+      <File FileName="Assets\Scripts\View\Main.cs" Line="62" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

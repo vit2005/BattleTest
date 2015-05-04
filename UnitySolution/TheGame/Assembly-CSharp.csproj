@@ -46,9 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CenterlizeScript.cs" />
-     <Compile Include="Assets\Scripts\Main.cs" />
-     <Compile Include="Assets\Scripts\ResizeScript.cs" />
+     <Compile Include="Assets\Scripts\Controller\LocalStorage.cs" />
+     <Compile Include="Assets\Scripts\Frameworks\JSONObject\JSONObject.cs" />
+     <Compile Include="Assets\Scripts\Frameworks\JSONObject\JSONTemplates.cs" />
+     <Compile Include="Assets\Scripts\Frameworks\JSONObject\VectorTemplates.cs" />
+     <Compile Include="Assets\Scripts\Model\IEffect.cs" />
+     <Compile Include="Assets\Scripts\Model\Unit.cs" />
+     <Compile Include="Assets\Scripts\View\CenterlizeScript.cs" />
+     <Compile Include="Assets\Scripts\View\CharacterMenu.cs" />
+     <Compile Include="Assets\Scripts\View\Main.cs" />
+     <Compile Include="Assets\Scripts\View\ResizeScript.cs" />
+     <None Include="Assets\Scripts\Frameworks\JSONObject\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

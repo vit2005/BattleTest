@@ -4,10 +4,10 @@ using System.Collections;
 public class ResizeScript : MonoBehaviour {
 	
 	void Start () {
-		SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+		//SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
 		gameObject.transform.localScale = new Vector3(1,1,1);
-		float width = sr.sprite.bounds.size.x;
-		float height = sr.sprite.bounds.size.y;
+		//float width = sr.sprite.bounds.size.x;
+		//float height = sr.sprite.bounds.size.y;
 		double worldScreenHeight = Camera.main.orthographicSize * 2.0;
 		double worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 		
