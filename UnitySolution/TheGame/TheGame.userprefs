@@ -2,12 +2,18 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\View\Main.cs">
     <Files>
-      <File FileName="Assets\Scripts\View\CharacterMenu.cs" Line="149" Column="1" />
-      <File FileName="Assets\Scripts\View\Main.cs" Line="62" Column="24" />
+      <File FileName="Assets\Scripts\Controller\LocalStorage.cs" Line="77" Column="1" />
+      <File FileName="Assets\Scripts\View\Main.cs" Line="116" Column="1" />
+      <File FileName="Assets\Scripts\View\CharacterMenu.cs" Line="141" Column="1" />
+      <File FileName="Assets\Scripts\Controller\BattleController.cs" Line="225" Column="1" />
+      <File FileName="Assets\Scripts\View\BattleView.cs" Line="118" Column="1" />
+      <File FileName="Assets\Scripts\Model\Unit.cs" Line="73" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Assets\Scripts\View\BattleView.cs" line="99" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

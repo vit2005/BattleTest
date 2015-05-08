@@ -77,20 +77,9 @@ public class CharacterMenu : MonoBehaviour {
 
 	void CheckMinusButtonsStatus(Transform unit)
 	{
-		if (unit.FindChild ("atk").GetComponent<Text> ().text == "0")
-			unit.FindChild ("atk_minus").gameObject.SetActive (false);
-		else
-			unit.FindChild ("atk_minus").gameObject.SetActive (true);
-
-		if (unit.FindChild ("def").GetComponent<Text> ().text == "0")
-			unit.FindChild ("def_minus").gameObject.SetActive (false);
-		else
-			unit.FindChild ("def_minus").gameObject.SetActive (true);
-
-		if (unit.FindChild ("agi").GetComponent<Text> ().text == "0")
-			unit.FindChild ("agi_minus").gameObject.SetActive (false);
-		else
-			unit.FindChild ("agi_minus").gameObject.SetActive (true);
+        unit.FindChild("atk_minus").gameObject.SetActive(unit.FindChild("atk").GetComponent<Text>().text != "0");
+        unit.FindChild("def_minus").gameObject.SetActive(unit.FindChild("def").GetComponent<Text>().text != "0");
+        unit.FindChild("agi_minus").gameObject.SetActive(unit.FindChild("agi").GetComponent<Text>().text != "0");
 	}
 
 	void ChangeStat(string parameter, int unit_number, bool increase)
