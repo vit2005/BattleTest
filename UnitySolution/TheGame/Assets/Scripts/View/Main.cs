@@ -20,7 +20,7 @@ public class Main : MonoBehaviour {
 		characterButton = transform.FindChild("menu").FindChild("character").GetComponent<Button>();
 		//characterButton = transform.FindChild("menu").FindChild("Button").GetComponent<Button>();
 		characterButton.onClick.AddListener(OpenCharacterSettings);
-        fightButton.onClick.AddListener(OpenBattleWindow);
+		fightButton.onClick.AddListener(OpenMapScreen);
 
 		LoadPlayer ();
 		FillCharacterMenu ();
@@ -106,9 +106,15 @@ public class Main : MonoBehaviour {
         OpenTratataWindow("BattleWindow");
     }
 
+	public void OpenMapScreen()
+	{
+		OpenTratataWindow("mapScreen");
+
+	}
+
     void OpenTratataWindow(string name)
     {
-        List<string> windows = new List<string>() { "menu", "characterMenu", "BattleWindow" };
+		List<string> windows = new List<string>() { "menu", "characterMenu", "BattleWindow", "mapScreen" };
         foreach (string s in windows)
             transform.FindChild(s).gameObject.SetActive(s == name);
     }

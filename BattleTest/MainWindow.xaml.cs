@@ -274,6 +274,19 @@ namespace BattleTest
         {
             Log.Text = text;
         }
+
+        private void GenerateAlly_Click(object sender, RoutedEventArgs e)
+        {
+            ATK1.Text = "50";
+            DEF2.Text = "50";
+            AGI3.Text = "50";
+            DEF1.Text = "40";
+            AGI2.Text = "40";
+            ATK3.Text = "40";
+            AGI1.Text = "30";
+            ATK2.Text = "30";
+            DEF3.Text = "30";
+        }
    
 
     }

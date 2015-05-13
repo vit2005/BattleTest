@@ -63,30 +63,33 @@ namespace BattleTest
 
         private void SingleFight(ref Unit u1, ref Unit u2)
         {
-            System.Threading.Thread.Sleep(3);
+            System.Threading.Thread.Sleep(5);
             Random r = new Random();
-            if (u2.dodge > r.Next(100))
+            int rnd = r.Next(100);
+            if (u2.dodge > rnd)
             {
-                log += "(dodge)";
+                log += string.Format("(d_{0}>{1})", (int)u2.dodge, rnd);
                 return;
             }
                 
-            System.Threading.Thread.Sleep(3);
-            if (u2.block > r.Next(100))
+            System.Threading.Thread.Sleep(5);
+            rnd = r.Next(100);
+            if (u2.block > rnd)
             {
-                log += "(block)";
+                log += string.Format("(b_{0}>{1})", (int)u2.block, rnd);
                 return;
             }
                 
-            System.Threading.Thread.Sleep(3);
+            System.Threading.Thread.Sleep(5);
             int crit = 1;
-            if (u1.crit > r.Next(100))
+            rnd = r.Next(100);
+            if (u1.crit > rnd)
             {
-                log += "(crit)";
+                log += string.Format("(c_{0}>{1})", (int)u1.crit, rnd);
                 crit = 2;
             }
-                
-            u2.hp -= (int) (u1.damage * crit * ((100 - u2.dodge) / 100));
+            int damage = (int)((double)u1.damage * (double)crit);
+            u2.hp -= damage;
             if (u2.hp <= 0)
             {
                 u2.isAlive = false;
@@ -107,13 +110,20 @@ namespace BattleTest
                 return null;
             if (alive.Count == 1)
                 return alive[0];
-            double minhp = alive[0].hp;
+            //double minhp = alive[0].hp;
+            //foreach (Unit u in alive)
+            //{
+            //    if (u.hp < minhp)
+            //        minhp = u.hp;
+            //}
+            //return alive.First<Unit>(x => x.hp == minhp);
+            double maxdmg = alive[0].damage;
             foreach (Unit u in alive)
             {
-                if (u.hp < minhp)
-                    minhp = u.hp;
+                if (u.damage > maxdmg)
+                    maxdmg = u.damage;
             }
-            return alive.First<Unit>(x => x.hp == minhp);
+            return alive.FirstOrDefault<Unit>(x => x.damage == maxdmg);
         }
     }
 }

@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\View\CharacterMenu.cs" />
      <Compile Include="Assets\Scripts\View\Main.cs" />
      <Compile Include="Assets\Scripts\View\ResizeScript.cs" />
+     <Compile Include="Assets\Scripts\View\mapScreen.cs" />
      <None Include="Assets\Scripts\Frameworks\JSONObject\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

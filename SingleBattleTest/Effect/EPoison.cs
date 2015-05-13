@@ -25,5 +25,10 @@ namespace SingleBattleTest.Effect
                 u.isAlive = false;
             }
         }
+
+        public override void End(ref List<Unit> team, ref Unit u)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
