@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\TheGame\Assets\Scripts\View\RegionDescription.cs">
+    <Files>
+      <File FileName="..\TheGame\Assets\Scripts\View\Region.cs" Line="28" Column="1" />
+      <File FileName="..\TheGame\Assets\Scripts\Controller\BattleController.cs" Line="217" Column="11" />
+      <File FileName="..\TheGame\Assets\Scripts\Controller\LocalStorage.cs" Line="1" Column="1" />
+      <File FileName="..\TheGame\Assets\Scripts\View\Main.cs" Line="122" Column="1" />
+      <File FileName="..\TheGame\Assets\Scripts\View\RegionDescription.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

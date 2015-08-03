@@ -6,8 +6,7 @@ public class mapScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Button b = transform.FindChild("map").FindChild("lvl1").GetComponent<Button>();
-		b.onClick.AddListener(GoLvl);
+
 	}
 	
 	// Update is called once per frame
@@ -15,8 +14,4 @@ public class mapScreen : MonoBehaviour {
 	
 	}
 
-	void GoLvl()
-	{
-		Main.Instance.OpenBattleWindow ();
-	}
 }

@@ -45,13 +45,11 @@ public class Main : MonoBehaviour {
     void SetWinRate()
     {
         Transform wr = transform.FindChild("menu").FindChild("wr");
-        if (LocalStorage.gamesPlayed == 0)
-        {
-            wr.gameObject.SetActive(false);
-            return;
-        }
-        wr.gameObject.SetActive(true);
-        wr.GetComponent<Text>().text = ((int)((double)LocalStorage.gamesWon / (double)LocalStorage.gamesPlayed * 100)).ToString() + "%";
+        wr.GetComponent<Text>().text = LocalStorage.last10games.ToString();
+		Transform lvl = transform.FindChild("menu").FindChild("lvl");
+		lvl.GetComponent<Text>().text = LocalStorage.lvl.ToString();
+		Transform exp = transform.FindChild("menu").FindChild("exp");
+		exp.GetComponent<Text> ().text = string.Format ("{0}({1})", LocalStorage.exp.ToString (), LocalStorage.lvl_exp [LocalStorage.lvl + 1].ToString ());
     }
 
     void SetPointsAviable()
@@ -112,9 +110,15 @@ public class Main : MonoBehaviour {
 
 	}
 
+	public void OpenRegionDescriptionWindow()
+	{
+		RegionDescription.Instance.Initiate ();
+		OpenTratataWindow("RegionDescription");
+	}
+
     void OpenTratataWindow(string name)
     {
-		List<string> windows = new List<string>() { "menu", "characterMenu", "BattleWindow", "mapScreen" };
+		List<string> windows = new List<string>() { "menu", "characterMenu", "BattleWindow", "mapScreen", "RegionDescription" };
         foreach (string s in windows)
             transform.FindChild(s).gameObject.SetActive(s == name);
     }

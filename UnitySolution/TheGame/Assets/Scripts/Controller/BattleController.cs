@@ -11,6 +11,8 @@ public class BattleController : MonoBehaviour
     public Unit Choosen;
     public Unit CurrentMoveUnit;
 
+    public int SelectedLevel;
+
     private static BattleController _instance;
 
     public static BattleController Instance
@@ -22,6 +24,7 @@ public class BattleController : MonoBehaviour
 	void Start () {
         _instance = this;
 	}
+
 
     public void Initiate(List<Unit> _allys)
     {
@@ -199,14 +202,19 @@ public class BattleController : MonoBehaviour
     private void GenerateEnemies()
     {
         int points = 0;
-        double coef = 1;
-        if (LocalStorage.gamesPlayed != 0)
-            coef += ((double)LocalStorage.gamesWon / (double)LocalStorage.gamesPlayed - (double)0.5);
+        double lg_coef = 0;
+        if (LocalStorage.last10games != 0)
+            lg_coef = ((double)LocalStorage.last10games * (double)0.1);
+
+        double dg_coef = 0;
+        int expected_player_lvl = (int)(LocalStorage.lvl / 10) + 1;
+        if (expected_player_lvl != Region.SelectedRegion.lvl)
+            dg_coef = (double)Region.SelectedRegion.lvl - 1 - ((double)LocalStorage.lvl / (double)10);
 
         foreach (Unit u in allys) {
-            points += (int)((double)(u.ATK + u.DEF + u.AGI + u.points) * (double)(coef));
+            points += u.ATK + u.DEF + u.AGI + u.points;
         }
-        points = (int)(points / 3);
+        points = (int)(((double)points + lg_coef * (double)points + dg_coef * (double)points) / (double)3);
 
         int atk, def, agi;
         enemies = new List<Unit>();
@@ -219,6 +227,7 @@ public class BattleController : MonoBehaviour
             enemies.Add(new Unit(atk, def, agi, 0, "Enemy"+(i+1).ToString()));
         }
     }
+
 
 
 }

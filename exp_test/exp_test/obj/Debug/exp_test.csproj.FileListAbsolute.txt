@@ -1,0 +1,2 @@
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\exp_test\exp_test\obj\Debug\exp_test.exe
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\exp_test\exp_test\obj\Debug\exp_test.pdb
