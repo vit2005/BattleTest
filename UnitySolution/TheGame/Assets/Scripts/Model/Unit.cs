@@ -23,6 +23,7 @@ using System.Text;
         public bool canMove;
 
         public List<IEffect> Effects;
+        public List<Item> Items;
 
         public Unit(int atk, int def, int agi, int _points, string _title = "", bool _isAlive = true)
         {
@@ -32,6 +33,7 @@ using System.Text;
 			
 			points = _points;
             utitle = _title;
+            Items = new List<Item>();
 
             Calc();
 
@@ -44,10 +46,28 @@ using System.Text;
             canMove = true;
             Effects = new List<IEffect>();
 
+            int bATK = 0, bDEF = 0, bAGI = 0;
+
+            foreach(Item i in Items)
+            {
+                switch(i.atribute)
+                {
+                    case (Item.Atribute.ATK):
+                        bATK += i.amount;
+                        break;
+                    case (Item.Atribute.DEF):
+                        bDEF += i.amount;
+                        break;
+                    case (Item.Atribute.AGI):
+                        bAGI += i.amount;
+                        break;
+                }
+            }
+
             //hp = (int)(100 + 30 * Math.Pow(DEF, 1.2) + 80 * Math.Pow(AGI, 0.6));
             //damage = 15 + 5 * Math.Pow(ATK, 1.2) + 10 * Math.Pow(AGI, 0.7);
-			hp = (int)(50 + 15 * Math.Pow(DEF, 1.4) + 30 * Math.Pow(AGI, 0.7));
-            damage = 40 + (double) 8 * Math.Pow(ATK, 1.2) + (double) 10 * Math.Pow(AGI, 0.7);
+			hp = (int)(50 + 15 * Math.Pow(DEF + bDEF, 1.4) + 30 * Math.Pow(AGI + bAGI, 0.7));
+            damage = 40 + (double) 8 * Math.Pow(ATK + bATK, 1.2) + (double) 10 * Math.Pow(AGI + bAGI, 0.7);
 			maxhp = hp;
 
             //block = 0;
@@ -61,8 +81,8 @@ using System.Text;
             //    dodge = (Math.Sqrt(AGI * 17) + 15 > 55) ? 55 : Math.Sqrt(AGI * 17) + 15;
             //else
 			//dodge = (double)(Math.Sqrt(AGI * 17) + 15) / (double)((ATK + DEF) * 55);
-			block = Math.Sqrt(DEF);
-			dodge = Math.Sqrt(AGI);
+			block = Math.Sqrt(DEF + bDEF);
+			dodge = Math.Sqrt(AGI + bAGI);
 		
             crit = dodge;
         }

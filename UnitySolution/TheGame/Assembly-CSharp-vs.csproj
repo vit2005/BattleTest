@@ -47,19 +47,26 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Controller\BattleController.cs" />
+     <Compile Include="Assets\Scripts\Controller\Inventory.cs" />
      <Compile Include="Assets\Scripts\Controller\LocalStorage.cs" />
      <Compile Include="Assets\Scripts\Frameworks\JSONObject\JSONObject.cs" />
      <Compile Include="Assets\Scripts\Frameworks\JSONObject\JSONTemplates.cs" />
      <Compile Include="Assets\Scripts\Frameworks\JSONObject\VectorTemplates.cs" />
      <Compile Include="Assets\Scripts\Model\IEffect.cs" />
+     <Compile Include="Assets\Scripts\Model\Item.cs" />
+     <Compile Include="Assets\Scripts\Model\ItemsDatabase.cs" />
      <Compile Include="Assets\Scripts\Model\Unit.cs" />
      <Compile Include="Assets\Scripts\View\BattleView.cs" />
      <Compile Include="Assets\Scripts\View\CenterlizeScript.cs" />
      <Compile Include="Assets\Scripts\View\CharacterMenu.cs" />
+     <Compile Include="Assets\Scripts\View\InventoryDraggedItem.cs" />
+     <Compile Include="Assets\Scripts\View\InventoryItemHolder.cs" />
+     <Compile Include="Assets\Scripts\View\InventoryWindowScript.cs" />
      <Compile Include="Assets\Scripts\View\Main.cs" />
      <Compile Include="Assets\Scripts\View\Region.cs" />
      <Compile Include="Assets\Scripts\View\RegionDescription.cs" />
      <Compile Include="Assets\Scripts\View\ResizeScript.cs" />
+     <Compile Include="Assets\Scripts\View\RewardWindowScript.cs" />
      <Compile Include="Assets\Scripts\View\mapScreen.cs" />
      <None Include="Assets\Scripts\Frameworks\JSONObject\readme.txt" />
  <Reference Include="UnityEngine.UI">

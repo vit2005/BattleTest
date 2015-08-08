@@ -54,6 +54,8 @@ public class BattleView : MonoBehaviour {
     {
         transform.FindChild("Victory").gameObject.SetActive(show.HasValue && show.Value);
         transform.FindChild("Defeat").gameObject.SetActive(show.HasValue && !show.Value);
+		if (show.HasValue)
+			RewardWindowScript.isVictory = show.Value;
     }
 
     public void FillHP()
@@ -112,6 +114,6 @@ public class BattleView : MonoBehaviour {
     void closeBattle()
     {
         ShowVictory(null);
-        Main.Instance.OpenMainMenu();
+        Main.Instance.OpenRewardWindow();
     }
 }

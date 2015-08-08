@@ -18,12 +18,15 @@ public class Main : MonoBehaviour {
 		_instance = this;
 		fightButton = transform.FindChild("menu").FindChild("fight").GetComponent<Button>();
 		characterButton = transform.FindChild("menu").FindChild("character").GetComponent<Button>();
+        Button inventoryButton = transform.FindChild("menu").FindChild("Inventory").GetComponent<Button>();
+        inventoryButton.onClick.AddListener(OpenInventoryWindow);
+
 		//characterButton = transform.FindChild("menu").FindChild("Button").GetComponent<Button>();
 		characterButton.onClick.AddListener(OpenCharacterSettings);
 		fightButton.onClick.AddListener(OpenMapScreen);
 
-		LoadPlayer ();
-		FillCharacterMenu ();
+        LocalStorage.Load();
+		//FillCharacterMenu ();
         SetWinRate();
         SetPointsAviable();
 	}
@@ -31,15 +34,6 @@ public class Main : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	void LoadPlayer()
-	{
-		if (PlayerPrefs.HasKey ("player")) {
-			LocalStorage.Load();
-		} else {
-			LocalStorage.Save();
-		}
 	}
 
     void SetWinRate()
@@ -116,9 +110,21 @@ public class Main : MonoBehaviour {
 		OpenTratataWindow("RegionDescription");
 	}
 
+    public void OpenInventoryWindow()
+    {
+        InventoryWindowScript.Instance.Initiate();
+        OpenTratataWindow("InventoryWindow");
+    }
+
+    public void OpenRewardWindow()
+    {
+        RewardWindowScript.Instance.Initiate();
+        OpenTratataWindow("RewardDescription");
+    }
+
     void OpenTratataWindow(string name)
     {
-		List<string> windows = new List<string>() { "menu", "characterMenu", "BattleWindow", "mapScreen", "RegionDescription" };
+        List<string> windows = new List<string>() { "menu", "characterMenu", "BattleWindow", "mapScreen", "RegionDescription", "InventoryWindow", "RewardDescription" };
         foreach (string s in windows)
             transform.FindChild(s).gameObject.SetActive(s == name);
     }

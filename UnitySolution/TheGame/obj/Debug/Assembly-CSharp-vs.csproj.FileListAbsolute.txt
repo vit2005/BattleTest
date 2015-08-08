@@ -12,3 +12,13 @@ C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheG
 C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\obj\Debug\Assembly-CSharp.dll
 C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Vit\Documents\Visual Studio 2013\Projects\BattleTest\UnitySolution\TheGame\Temp\bin\Debug\UnityEngine.Analytics.xml

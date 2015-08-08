@@ -215,6 +215,8 @@ public class BattleController : MonoBehaviour
             points += u.ATK + u.DEF + u.AGI + u.points;
         }
         points = (int)(((double)points + lg_coef * (double)points + dg_coef * (double)points) / (double)3);
+        if (points < 10)
+            points = 10;
 
         int atk, def, agi;
         enemies = new List<Unit>();
