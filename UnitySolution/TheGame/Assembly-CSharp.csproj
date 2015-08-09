@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\View\InventoryDraggedItem.cs" />
      <Compile Include="Assets\Scripts\View\InventoryItemHolder.cs" />
      <Compile Include="Assets\Scripts\View\InventoryWindowScript.cs" />
+     <Compile Include="Assets\Scripts\View\ItemInfoDialog.cs" />
      <Compile Include="Assets\Scripts\View\Main.cs" />
      <Compile Include="Assets\Scripts\View\Region.cs" />
      <Compile Include="Assets\Scripts\View\RegionDescription.cs" />

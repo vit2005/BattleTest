@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
 
@@ -6,18 +7,25 @@ public class InventoryDraggedItem : MonoBehaviour, IBeginDragHandler, IDragHandl
 {
     public Item item;
     public static GameObject itemBeingDragged;
+	public static Item ItemInfo;
     Vector3 StartPosition;
     Transform StartParent;
     Transform TempParent;
 
 	// Use this for initialization
 	void Start () {
-	
+		transform.GetComponent<Button>().onClick.AddListener(Info);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	void Info()
+	{
+		ItemInfo = this.item;
+		ItemInfoDialog.Instance.Initiate ();
 	}
 
     public void OnBeginDrag(PointerEventData eventData)

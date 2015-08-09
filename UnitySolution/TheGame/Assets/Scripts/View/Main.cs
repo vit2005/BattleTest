@@ -16,6 +16,8 @@ public class Main : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_instance = this;
+		transform.FindChild ("ItemInfoDialog").gameObject.SetActive(false);
+
 		fightButton = transform.FindChild("menu").FindChild("fight").GetComponent<Button>();
 		characterButton = transform.FindChild("menu").FindChild("character").GetComponent<Button>();
         Button inventoryButton = transform.FindChild("menu").FindChild("Inventory").GetComponent<Button>();
@@ -124,7 +126,7 @@ public class Main : MonoBehaviour {
 
     void OpenTratataWindow(string name)
     {
-        List<string> windows = new List<string>() { "menu", "characterMenu", "BattleWindow", "mapScreen", "RegionDescription", "InventoryWindow", "RewardDescription" };
+		List<string> windows = new List<string>() { "menu", "characterMenu", "BattleWindow", "mapScreen", "RegionDescription", "InventoryWindow", "RewardDescription" };
         foreach (string s in windows)
             transform.FindChild(s).gameObject.SetActive(s == name);
     }

@@ -120,6 +120,7 @@ public class LocalStorage
 
         JSONObject oItemsSet = new JSONObject(PlayerPrefs.GetString("ItemsSet"));
         ItemsSet = oItemsSet.ToDictionary();
+		Inventory.Instance.Initiate ();
 
         infoLoaded = true;
         Debug.Log("Loaded: " + json);

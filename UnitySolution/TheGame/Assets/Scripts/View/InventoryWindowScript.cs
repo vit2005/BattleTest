@@ -48,7 +48,7 @@ public class InventoryWindowScript : MonoBehaviour {
                     Inventory.ItemsSet.Add(string.Format("u{0}s{1}", i, j), a_slot.GetChild(0).GetComponent<InventoryDraggedItem>().item);
             }
         }
-
+		Inventory.Instance.Initiate ();
         clearAll();
         LocalStorage.Save();
         Main.Instance.OpenMainMenu();

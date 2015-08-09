@@ -46,9 +46,11 @@ public class Inventory {
             if (s.Contains("u1") && s.Contains("a"))
                 LocalStorage.player[0].Items.Add(ItemsSet[s]);
             else if (s.Contains("u2") && s.Contains("a"))
-                LocalStorage.player[0].Items.Add(ItemsSet[s]);
+                LocalStorage.player[1].Items.Add(ItemsSet[s]);
             else if (s.Contains("u3") && s.Contains("a"))
-                LocalStorage.player[0].Items.Add(ItemsSet[s]);
+                LocalStorage.player[2].Items.Add(ItemsSet[s]);
         }
+		foreach (Unit u in LocalStorage.player)
+			u.Calc ();
     }
 }
